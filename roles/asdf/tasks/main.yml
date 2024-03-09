@@ -1,0 +1,6 @@
+- name: Install ASDF # noqa: latest
+  ansible.builtin.git:
+    repo: https://github.com/asdf-vm/asdf.git
+    version: v0.14.0
+    dest: "{{ ansible_user_dir }}/.asdf"
+    depth: 1
