@@ -58,3 +58,15 @@
   ansible.builtin.package:
     state: present
     name: bpytop
+
+- name: Install curl
+  become: true
+  ansible.builtin.package:
+    state: present
+    name: curl
+
+- name: Install wget
+  become: true
+  ansible.builtin.package:
+    state: present
+    name: wget
