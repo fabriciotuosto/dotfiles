@@ -4,5 +4,6 @@
     - common
     - zsh
     - nvm
+    - asdf
     - tmux
     - neovim
