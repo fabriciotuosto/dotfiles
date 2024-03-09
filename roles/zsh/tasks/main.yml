@@ -42,21 +42,21 @@
 
 - name: "Link .zshrc"
   ansible.builtin.file:
-    src: "zshrc"
+    src: "{{ role_path }}/files/zshrc"
     dest: "{{ ansible_user_dir }}/.zshrc"
     state: link
     force: true
 
 - name: "Link .profile"
   ansible.builtin.file:
-    src: "profile"
+    src: "{{ role_path }}/files/profile"
     dest: "{{ ansible_user_dir }}/.profile"
     state: link
     force: true
 
 - name: "Link .p10k.zsh"
   ansible.builtin.file:
-    src: "p10k.zsh"
+    src: "{{ role_path }}/files/p10k.zsh"
     dest: "{{ ansible_user_dir }}/.p10k.zsh"
     state: link
     force: true
