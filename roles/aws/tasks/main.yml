@@ -1,0 +1,15 @@
+- name: "Copy AWS Credentials"
+  ansible.builtin.file:
+    src: "{{ role_path}}/files/credentials"
+    dest: "{{ ansible_env.HOME }}/.aws/credentials"
+    state: link
+    mode: 0600
+    force: true
+
+- name: "Copy AWS Config"
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/config"
+    dest: "{{ ansible_env.HOME }}/.aws/config"
+    state: link
+    mode: 0600
+    force: true
