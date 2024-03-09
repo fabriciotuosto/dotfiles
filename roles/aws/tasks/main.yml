@@ -1,15 +1,17 @@
+- name: Ensure AWS directory exists
+  file:
+    path: "{{ ansible_env.HOME }}/.aws"
+    recurse: true
+    state: directory
+
 - name: "Copy AWS Credentials"
-  ansible.builtin.file:
+  ansible.builtin.copy:
     src: "{{ role_path}}/files/credentials"
     dest: "{{ ansible_env.HOME }}/.aws/credentials"
-    state: link
     mode: 0600
-    force: true
 
 - name: "Copy AWS Config"
-  ansible.builtin.file:
+  ansible.builtin.copy:
     src: "{{ role_path }}/files/config"
     dest: "{{ ansible_env.HOME }}/.aws/config"
-    state: link
     mode: 0600
-    force: true
