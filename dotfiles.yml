@@ -8,3 +8,6 @@
     - tmux
     - neovim
     - aws
+    - ssh
+    - vpn
+    - gnugp
