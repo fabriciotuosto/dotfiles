@@ -1,0 +1,11 @@
+- name: Ensure .ssh directory exists
+  file:
+    path: "{{ ansible_env.HOME }}/.ssh"
+    recurse: true
+    state: directory
+
+- name: "Copy SSH files"
+  ansible.builtin.copy:
+    src: "{{ role_path}}/files/"
+    dest: "{{ ansible_env.HOME }}/.ssh/"
+    mode: 0600

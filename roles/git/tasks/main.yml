@@ -1,0 +1,13 @@
+- name: "Link .gitconfig"
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/.gitconfig"
+    dest: "{{ ansible_user_dir}}/.gitconfig"
+    state: link
+    force: true
+
+- name: "Link .gitignore global"
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/.gitignore"
+    dest: "{{ ansible_user_dir}}/.gitignore"
+    state: link
+    force: true

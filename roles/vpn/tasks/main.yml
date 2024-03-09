@@ -1,0 +1,11 @@
+- name: Ensure VPN directory exists
+  file:
+    path: "{{ ansible_env.HOME }}/.vpn"
+    recurse: true
+    state: directory
+
+- name: "Copy VPN Files"
+  ansible.builtin.copy:
+    src: "{{ role_path}}/files/"
+    dest: "{{ ansible_env.HOME }}/.vpn"
+    mode: 0600

@@ -1,0 +1,7 @@
+[user]
+	email = fabricio.tuosto@gmail.com
+	name = Fabricio Tuosto
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[commit]
+	gpgsign = true

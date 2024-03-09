@@ -1,0 +1,9 @@
+.elixir_ls
+.idea
+.code
+node_modules
+_dist
+.tool-versions
+.mypy_cache
+dist
+target
