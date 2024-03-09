@@ -1,7 +1,8 @@
 - name: "Install neovim"
   ansible.builtin.unarchive:
     src: https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz
-    dest: /opt
+    creates: /opt/nvim-linux64
+    dest: /opt/
     remote_src: yes
     become: true
 
