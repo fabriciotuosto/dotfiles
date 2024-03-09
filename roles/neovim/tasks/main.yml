@@ -4,7 +4,6 @@
     creates: /opt/nvim-linux64
     dest: /opt/
     remote_src: yes
-    become: true
 
 - name: "Link neovim executable"
   ansible.builtin.file:
