@@ -1,0 +1,16 @@
+- name: Install tmux
+  become: true
+  ansible.builtin.package:
+    name: tmux
+    state: present
+
+- name: Clone TPM repository
+  git:
+    repo: 'https://github.com/tmux-plugins/tpm.git'
+    dest: '{{ansible_env.HOME}}/.config/tmux/plugins/tpm'
+
+- name: "Link tmux.conf"
+  ansible.builtin.file:
+    src: "tmux.conf"
+    dest: "{{ ansible_user_dir }}/.config/tmux/tmux.conf"
+    state: link

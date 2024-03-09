@@ -1,0 +1,60 @@
+- name: Install Git
+  become: true
+  ansible.builtin.package:
+    state: present
+    name: git
+
+- name: Install ripgrep
+  become: true
+  ansible.builtin.package:
+    state: present
+    name: ripgrep
+
+- name: Install exa
+  become: true
+  ansible.builtin.package:
+    state: present
+    name: exa
+
+- name: Install fzf
+  become: true
+  ansible.builtin.package:
+    state: present
+    name: fzf
+
+- name: Install fd-find
+  become: true
+  ansible.builtin.package:
+    state: present
+    name: "fd-find"
+
+- name: Install zoxide
+  become: true
+  ansible.builtin.package:
+    state: present
+    name: zoxide
+
+- name: Install bat
+  become: true
+  ansible.builtin.package:
+    state: present
+    name: bat
+
+- name: Install build essential
+  become: true
+  ansible.builtin.package:
+    name: build-essential
+    state: present
+  when: ansible_os_family == 'Debian'
+
+- name: Install unzip
+  become: true
+  ansible.builtin.package:
+    state: present
+    name: unzip
+
+- name: Install bpytop
+  become: true
+  ansible.builtin.package:
+    state: present
+    name: bpytop
