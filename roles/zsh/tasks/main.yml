@@ -45,15 +45,18 @@
     src: "zshrc"
     dest: "{{ ansible_user_dir }}/.zshrc"
     state: link
+    force: true
 
 - name: "Link .profile"
   ansible.builtin.file:
     src: "profile"
     dest: "{{ ansible_user_dir }}/.profile"
     state: link
+    force: true
 
 - name: "Link .p10k.zsh"
   ansible.builtin.file:
     src: "p10k.zsh"
     dest: "{{ ansible_user_dir }}/.p10k.zsh"
     state: link
+    force: true
