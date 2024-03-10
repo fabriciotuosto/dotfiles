@@ -2,19 +2,7 @@
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
-export PATH=$PATH:/usr/local/go/bin
 
-export NVM_LAZY_LOAD=true
-export NVM_COMPLETION=true
-export NVM_DIR="$HOME/.nvm"
-source $NVM_DIR/nvm.sh
-
-# source "$HOME/.cargo/env"
-source $HOME/.asdf/asdf.sh
-# GO variables
-GOROOT=~/.asdf/installs/golang/1.22.0/go
-GOPATH=~/.asdf/installs/golang/1.22.0/packages
-PATH=$GOPATH/bin:$PATH
 
 alias vim=nvim
 alias vi=nvim
@@ -30,8 +18,10 @@ alias egrep='egrep --color=auto'
 alias fd=fd-find
 alias z=zoxide
 
+export NVM_LAZY_LOAD=true
+export NVM_COMPLETION=true
+export NVM_DIR="$HOME/.nvm"
+source $NVM_DIR/nvm.sh
+
+source $HOME/.asdf/asdf.sh
 export EDITOR='nvim'
-export LANGUAGE=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LC_TYPE=en_US.UTF-8
