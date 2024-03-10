@@ -78,3 +78,10 @@
   ansible.builtin.package:
     state: present
     name: wget
+
+- name: Install openssh
+  become: true
+  ansible.builtin.package:
+    state: present
+    name: "openssh"
+  when: ansible_os_family == 'Arch'
