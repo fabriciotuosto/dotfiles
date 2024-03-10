@@ -15,3 +15,13 @@
     src: "{{ role_path}}/files/"
     dest: "{{ ansible_env.HOME }}/.gnupg"
     mode: 0600
+
+- name: Import GPG Keys
+  shell: >
+    gpg --import secret_keys.asc
+    gpg --import pub_keys.asc
+    gpg --import-ownertrust otrust.txt
+
+  args:
+    executable: /bin/bash
+    chdir: "{{ ansible_env.HOME }}/.gnupg"
