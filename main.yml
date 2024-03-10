@@ -1,4 +1,4 @@
-- name: Dot files
+- name: Environment
   hosts: localhost
   roles:
     - common
@@ -11,3 +11,10 @@
     - ssh
     - vpn
     - gnupg
+    # Programming SDKs
+    - golang
+    - elixir
+    # - rust
+    # - zig
+    # - odin
+    # - docker

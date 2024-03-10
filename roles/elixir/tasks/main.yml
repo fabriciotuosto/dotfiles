@@ -1,0 +1,26 @@
+- name: Elixir version
+  vars:
+    elixir_version: 1.13.4-otp-24
+    erlang_version: 24.2.2
+
+# Installing erlang
+- name: Add erlang plugin to asdf
+  command: "${HOME}/.asdf/bin/asdf plugin-add erlang"
+
+- name: Install erlang {{erlang_version}} with asdf
+  command: "${HOME}/.asdf/bin/asdf install erlang {{item}}"
+  loop: "{{erlang_version}}"
+
+- name: Set global version for golang to {{erlang_version}}
+  command: "${HOME}/.asdf/bin/asdf global erlang {{erlang_version}}"
+
+  # Installing elixir
+- name: Add elixir plugin to asdf
+  command: "${HOME}/.asdf/bin/asdf plugin-add elixir"
+
+- name: Install elixir {{elixir_version}} with asdf
+  command: "${HOME}/.asdf/bin/asdf install elixir {{item}}"
+  loop: "{{elixir_version}}"
+
+- name: Set global version for golang to {{elixir_version}}
+  command: "${HOME}/.asdf/bin/asdf global elixir {{elixir_version}}"
