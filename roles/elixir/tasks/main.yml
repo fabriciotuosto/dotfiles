@@ -3,7 +3,7 @@
   ansible.builtin.package:
     state: present
     name: "{{ item }}"
-    loop:
+    with_items:
       - libssl-dev
       - automake
       - autoconf
