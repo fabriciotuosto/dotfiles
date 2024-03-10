@@ -19,7 +19,7 @@
 - name: Install zsh-completions plugin # noqa: latest
   ansible.builtin.git:
     repo: https://github.com/zsh-users/zsh-completions
-    dest: "{{ ansible_user_dir }}.oh-my-zsh/custom/plugins/zsh-completions"
+    dest: "{{ ansible_user_dir }}/.oh-my-zsh/custom/plugins/zsh-completions"
     depth: 1
 
 - name: Install zsh-syntax-highlighting plugin # noqa: latest
