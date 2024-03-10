@@ -1,5 +1,5 @@
 - name: Elixir version
-  vars:
+  set_fact:
     elixir_version: 1.13.4-otp-24
     erlang_version: 24.2.2
 
