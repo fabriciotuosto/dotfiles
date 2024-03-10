@@ -27,6 +27,14 @@
   ansible.builtin.package:
     state: present
     name: "fd-find"
+  when: ansible_os_family == 'Debian'
+
+- name: Install fd-find
+  become: true
+  ansible.builtin.package:
+    state: present
+    name: "fd"
+  when: ansible_os_family == 'Arch'
 
 - name: Install zoxide
   become: true

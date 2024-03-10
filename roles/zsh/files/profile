@@ -3,7 +3,6 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-
 alias vim=nvim
 alias vi=nvim
 alias code=nvim

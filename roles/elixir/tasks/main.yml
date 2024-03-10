@@ -10,6 +10,17 @@
       - xsltproc
       - fop
       - ament-cmake-xmllint
+  when: ansible_os_family == 'Debian'
+
+
+- name: Install erlang dependencies
+  become: true
+  ansible.builtin.package:
+    state: present
+    name:
+      - libxslt
+      - fop
+  when: ansible_os_family == 'Arch'
 
 
 - name: Elixir version

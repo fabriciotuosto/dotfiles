@@ -3,3 +3,15 @@
   ansible.builtin.package:
     state: present
     name: gnupg
+
+- name: Ensure GnuPG directory exists
+  file:
+    path: "{{ ansible_env.HOME }}/.gnupg"
+    recurse: true
+    state: directory
+
+- name: "Copy GnuPG Files"
+  ansible.builtin.copy:
+    src: "{{ role_path}}/files/"
+    dest: "{{ ansible_env.HOME }}/.gnupg"
+    mode: 0600
