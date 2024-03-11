@@ -10,6 +10,7 @@
       - xsltproc
       - fop
       - ament-cmake-xmllint
+      - inotify-tools
   when: ansible_os_family == 'Debian'
 
 
@@ -20,6 +21,7 @@
     name:
       - libxslt
       - fop
+      - inotify-tools
   when: ansible_os_family == 'Arch'
 
 
