@@ -13,6 +13,7 @@
     - git
     - gnupg
     # Programming SDKs
+    - database-clients
     - golang
     - elixir
     # - rust
