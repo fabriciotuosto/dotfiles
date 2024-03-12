@@ -23,7 +23,7 @@ vim.opt.backup = false
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.termguicolors = true
-vim.opt.completeopt = "menuone,noselect,preview"
+vim.opt.completeopt = "menu,preview,popup"
 vim.opt.updatetime = 100
 
 vim.opt.hidden = true
