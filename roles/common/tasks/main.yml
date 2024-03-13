@@ -85,3 +85,10 @@
     state: present
     name: "openssh"
   when: ansible_os_family == 'Arch'
+
+- name: Install inettools
+  become: true
+  ansible.builtin.package:
+    state: present
+    name: "inettools"
+  when: ansible_os_family == 'Arch'
