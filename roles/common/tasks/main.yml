@@ -1,94 +1,35 @@
-- name: Install Git
+- name: Install Common Tools
   become: true
   ansible.builtin.package:
     state: present
-    name: git
+    name:
+      - git
+      - ripgrep
+      - exa
+      - fzf
+      - zoxide
+      - bat
+      - unzip
+      - bpytop
+      - wget
+      - curl
 
-- name: Install ripgrep
+- name: Install Debian Common tools
   become: true
   ansible.builtin.package:
     state: present
-    name: ripgrep
-
-- name: Install exa
-  become: true
-  ansible.builtin.package:
-    state: present
-    name: exa
-
-- name: Install fzf
-  become: true
-  ansible.builtin.package:
-    state: present
-    name: fzf
-
-- name: Install fd-find
-  become: true
-  ansible.builtin.package:
-    state: present
-    name: "fd-find"
+    name:
+      - "fd-find"
+      - "build-essential"
   when: ansible_os_family == 'Debian'
 
-- name: Install fd-find
+- name: Install Arch Common tools
   become: true
   ansible.builtin.package:
     state: present
-    name: "fd"
-  when: ansible_os_family == 'Arch'
-
-- name: Install zoxide
-  become: true
-  ansible.builtin.package:
-    state: present
-    name: zoxide
-
-- name: Install bat
-  become: true
-  ansible.builtin.package:
-    state: present
-    name: bat
-
-- name: Install build essential
-  become: true
-  ansible.builtin.package:
-    name: build-essential
-    state: present
-  when: ansible_os_family == 'Debian'
-
-- name: Install unzip
-  become: true
-  ansible.builtin.package:
-    state: present
-    name: unzip
-
-- name: Install bpytop
-  become: true
-  ansible.builtin.package:
-    state: present
-    name: bpytop
-
-- name: Install curl
-  become: true
-  ansible.builtin.package:
-    state: present
-    name: curl
-
-- name: Install wget
-  become: true
-  ansible.builtin.package:
-    state: present
-    name: wget
-
-- name: Install openssh
-  become: true
-  ansible.builtin.package:
-    state: present
-    name: "openssh"
-  when: ansible_os_family == 'Arch'
-
-- name: Install inettools
-  become: true
-  ansible.builtin.package:
-    state: present
-    name: "inettools"
-  when: ansible_os_family == 'Arch'
+    name:
+      - "extra/fd"
+      - "inetutils"
+      - "core/less"
+      - "openssh"
+  when: ansible_os_family == 'Archlinux'

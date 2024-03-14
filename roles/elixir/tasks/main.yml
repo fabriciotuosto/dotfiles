@@ -22,7 +22,7 @@
       - libxslt
       - fop
       - inotify-tools
-  when: ansible_os_family == 'Arch'
+  when: ansible_os_family == 'Archlinux'
 
 
 - name: Elixir version

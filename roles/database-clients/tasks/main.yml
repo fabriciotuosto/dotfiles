@@ -10,4 +10,4 @@
   ansible.builtin.package:
     state: present
     name: "postgresql-libs"
-  when: ansible_os_family == 'Arch'
+  when: ansible_os_family == Archlinux'

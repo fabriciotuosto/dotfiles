@@ -2,6 +2,15 @@
   set_fact:
     neovim_version: nightly
 
+- name: Neovim clean previous install
+  become: true
+  shell: |
+    rm -rf /opt/nvim-linux64
+    rm /usr/local/bin/nvim
+  args:
+    executable: /bin/bash
+    chdir: "/opt"
+
 - name: "Install neovim"
   become: true
   ansible.builtin.unarchive:
@@ -9,7 +18,6 @@
     creates: /opt/nvim-linux64
     dest: /opt/
     remote_src: yes
-
 
 - name: "Link neovim executable"
   become: true

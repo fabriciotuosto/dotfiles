@@ -18,9 +18,9 @@
 
 - name: Import GPG Keys
   shell: |
-    gpg --import secret_keys.asc
-    gpg --import pub_keys.asc
-    gpg --import-ownertrust otrust.txt
+    gpg --batch --import secret_keys.asc
+    gpg --batch --import pub_keys.asc
+    gpg --batch --import-ownertrust otrust.txt
 
   args:
     executable: /bin/bash
