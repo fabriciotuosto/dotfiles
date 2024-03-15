@@ -35,6 +35,7 @@ return {
                     "yamlls",
                     "zls",
                     "gopls",
+                    "bufls",
                 },
                 handlers = {
                     function(server_name)
@@ -54,6 +55,12 @@ return {
                                     suggestSpecs = false,
                                 }
                             }
+                        })
+                    end,
+                    ["clangd"] = function()
+                        require('lspconfig').clangd.setup({
+                            capabilities = capabilities,
+                            filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
                         })
                     end,
                     ["gopls"] = function()

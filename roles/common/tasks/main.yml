@@ -13,6 +13,7 @@
       - bpytop
       - wget
       - curl
+      - protobuf
 
 - name: Install Debian Common tools
   become: true
