@@ -24,3 +24,7 @@ source $NVM_DIR/nvm.sh
 
 source $HOME/.asdf/asdf.sh
 export EDITOR='nvim'
+
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN:$GOPATH
