@@ -12,8 +12,14 @@ vim.keymap.set('n', "J", "mzJ`z")
 
 vim.keymap.set('x', "<leader>p", "\"_dP")
 
-vim.keymap.set('n', "<C-s>", ":w<CR>")
+vim.keymap.set('n', "<C-s>", ":w<CR>", { desc = "[S]ave Buffer" })
 
-vim.keymap.set('n', '<A-n>', ":bnext<CR>")
-vim.keymap.set('n', '<A-p>', ":bprev<CR>")
-vim.keymap.set('n', '<A-x>', ":bw<CR>")
+vim.keymap.set('n', '<A-n>', ":bnext<CR>", { desc = "[N]ext Buffer" })
+vim.keymap.set('n', '<A-p>', ":bprev<CR>", { desc = "[P]revious Buffer" })
+vim.keymap.set('n', '<A-x>', ":bw<CR>", { desc =  "[X] close Buffer"  })
+
+-- Diagnostic keymaps
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })

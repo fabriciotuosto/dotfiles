@@ -52,7 +52,6 @@ return {
 			textobjects = {
 				select = {
 					enable=true,
-
 					lookahead=true,
 				}
 			}

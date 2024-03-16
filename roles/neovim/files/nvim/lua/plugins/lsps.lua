@@ -15,11 +15,9 @@ return {
             )
             require("mason-lspconfig").setup({
                 ensure_installed = {
-                    "rust_analyzer",
                     "cssls",
                     "jsonls",
                     "angularls",
-                    "denols",
                     "dockerls",
                     "docker_compose_language_service",
                     "elixirls",
@@ -27,13 +25,10 @@ return {
                     "html",
                     "lua_ls",
                     "tsserver",
-                    "sqlls",
-                    "marksman",
-                    "templ",
-                    "clangd",
                     "pyright",
+                    "sqlls",
+                    "templ",
                     "yamlls",
-                    "zls",
                     "gopls",
                     "bufls",
                 },
@@ -41,6 +36,22 @@ return {
                     function(server_name)
                         local opts = { capabilities = capabilities }
                         require('lspconfig')[server_name].setup(opts)
+                    end,
+                    ["lua_ls"] = function()
+                        require("lspconfig").lua_ls.setup({
+                            settings = {
+                                Lua = {
+                                    runtime = { version = "LuaJIT" },
+                                    workspace = {
+                                        checkThirdParty = false,
+                                        library = {
+                                            "${3rd}/luv/library",
+                                            unpack(vim.api.nvim_get_runtime_file('', true)),
+                                        }
+                                    }
+                                }
+                            }
+                        })
                     end,
                     ["elixirls"] = function()
                         local elixirls = require('mason-registry').get_package('elixir-ls')
@@ -57,12 +68,12 @@ return {
                             }
                         })
                     end,
-                    ["clangd"] = function()
-                        require('lspconfig').clangd.setup({
-                            capabilities = capabilities,
-                            filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
-                        })
-                    end,
+                    -- ["clangd"] = function()
+                    --     require('lspconfig').clangd.setup({
+                    --         capabilities = capabilities,
+                    --         filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
+                    --     })
+                    -- end,
                     ["gopls"] = function()
                         local util = require("lspconfig/util")
                         require('lspconfig').gopls.setup({
@@ -98,12 +109,6 @@ return {
                                     }
                                 }
                             }
-                        })
-                    end,
-                    ["denols"] = function()
-                        require('lspconfig').denols.setup({
-                            capabilities = capabilities,
-                            root_dir = require('lspconfig').util.root_pattern("deno.json", "deno.jsonc")
                         })
                     end,
                     ["tsserver"] = function()
@@ -161,23 +166,27 @@ return {
         "neovim/nvim-lspconfig",
         config = function()
             vim.api.nvim_create_autocmd("LspAttach", {
-                group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+                group = vim.api.nvim_create_augroup("UserLspConfig", {clear = true}),
                 callback = function(ev)
                     local client = vim.lsp.get_client_by_id(ev.data.client_id)
                     if client.server_capabilities.inlayHintProvider then
                         vim.lsp.inlay_hint.enable(ev.buf, true)
                     end
-                    local opts = { buffer = ev.buf }
-                    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-                    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-                    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-                    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-                    vim.keymap.set("n", "<leader>R", vim.lsp.buf.rename, opts)
-                    vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, opts)
-                    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-                    vim.keymap.set({ "n", "x" }, "<C-k>", vim.lsp.buf.signature_help, opts)
-                    vim.keymap.set({ "n", "x" }, "<leader>bf", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
-                    vim.keymap.set({ "n", "x" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+                    local map = function(keys, func, desc)
+                        vim.keymap.set('n', keys, func, { buffer = ev.buf, desc = 'LSP: ' .. desc })
+                    end
+                    map("gd", require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+                    map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+                    map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
+                    map("gD", vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+                    map("gr", require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+                    map("<leader>R", vim.lsp.buf.rename, "[R]ename")
+                    map("K", vim.lsp.buf.hover, "Hover Documentation")
+                    map("<C-k>", vim.lsp.buf.signature_help, "Signature Help")
+                    map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+                    map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
+                    map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+                    map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
                 end,
             })
         end
