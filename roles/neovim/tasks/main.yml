@@ -5,8 +5,8 @@
 - name: Neovim clean previous install
   become: true
   shell: |
-    rm -rf /opt/nvim-linux64
     rm /usr/local/bin/nvim
+    rm -rf /opt/nvim-linux64
   args:
     executable: /bin/bash
     chdir: "/opt"
