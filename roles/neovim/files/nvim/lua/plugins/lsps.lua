@@ -166,10 +166,10 @@ return {
         "neovim/nvim-lspconfig",
         config = function()
             vim.api.nvim_create_autocmd("LspAttach", {
-                group = vim.api.nvim_create_augroup("UserLspConfig", {clear = true}),
+                group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true }),
                 callback = function(ev)
                     local client = vim.lsp.get_client_by_id(ev.data.client_id)
-                    if client.server_capabilities.inlayHintProvider then
+                    if client ~= nil and client.server_capabilities.inlayHintProvider then
                         vim.lsp.inlay_hint.enable(ev.buf, true)
                     end
                     local map = function(keys, func, desc)
@@ -177,6 +177,7 @@ return {
                     end
                     map("gd", require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
                     map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+                    map('gi', require('telescope.builtin').lsp_incoming_calls, '[G]oto [I]comming Calls')
                     map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
                     map("gD", vim.lsp.buf.declaration, '[G]oto [D]eclaration')
                     map("gr", require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
