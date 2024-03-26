@@ -132,30 +132,6 @@ return {
                                     description = "Organize Imports"
                                 }
                             },
-                            settings = {
-                                javascript = {
-                                    inlayHints = {
-                                        includeInlayEnumMemberValueHints = true,
-                                        includeInlayFunctionLikeReturnTypeHints = true,
-                                        includeInlayFunctionParameterTypeHints = true,
-                                        includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
-                                        includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-                                        includeInlayPropertyDeclarationTypeHints = true,
-                                        includeInlayVariableTypeHints = true,
-                                    },
-                                },
-                                typescript = {
-                                    inlayHints = {
-                                        includeInlayEnumMemberValueHints = true,
-                                        includeInlayFunctionLikeReturnTypeHints = true,
-                                        includeInlayFunctionParameterTypeHints = true,
-                                        includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
-                                        includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-                                        includeInlayPropertyDeclarationTypeHints = true,
-                                        includeInlayVariableTypeHints = true,
-                                    },
-                                },
-                            }
                         })
                     end
                 },
@@ -168,10 +144,10 @@ return {
             vim.api.nvim_create_autocmd("LspAttach", {
                 group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true }),
                 callback = function(ev)
-                    local client = vim.lsp.get_client_by_id(ev.data.client_id)
-                    if client ~= nil and client.server_capabilities.inlayHintProvider then
-                        vim.lsp.inlay_hint.enable(ev.buf, true)
-                    end
+                    -- local client = vim.lsp.get_client_by_id(ev.data.client_id)
+                    -- if client ~= nil and client.server_capabilities.inlayHintProvider then
+                    --     vim.lsp.inlay_hint.enable(ev.buf, true)
+                    -- end
                     local map = function(keys, func, desc)
                         vim.keymap.set('n', keys, func, { buffer = ev.buf, desc = 'LSP: ' .. desc })
                     end

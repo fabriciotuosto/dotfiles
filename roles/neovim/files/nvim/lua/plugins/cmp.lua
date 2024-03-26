@@ -68,7 +68,7 @@ return {
                 },
                 mapping = cmp.mapping.preset.insert({
                     ['C-m'] = cmp.mapping.complete(),
-                    ['<CR>'] = cmp.mapping.confirm({
+                    ['C-y'] = cmp.mapping.confirm({
                         behavior = cmp.ConfirmBehavior.Replace,
                         select = true,
                     })

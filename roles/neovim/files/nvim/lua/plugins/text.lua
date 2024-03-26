@@ -1,9 +1,9 @@
 return {
-    {
-        'windwp/nvim-autopairs',
-        event = "InsertEnter",
-        config = true
-    },
+    -- {
+    --     'windwp/nvim-autopairs',
+    --     event = "InsertEnter",
+    --     config = true
+    -- },
     {
         "HiPhish/rainbow-delimiters.nvim",
     },
@@ -32,26 +32,26 @@ return {
             require("nvim-surround").setup({})
         end
     },
-    {
-        "mfussenegger/nvim-lint",
-        config = function()
-            require('lint').linter_by_ft = {
-                javascript = { 'eslint' },
-                typescript = { 'eslint' }
-            }
-            vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
-                callback = function()
-                    require('lint').try_lint()
-                end
-            })
-        end
-    },
-    {
-        "nvim-treesitter/nvim-treesitter-context",
-        config = function()
-            require('treesitter-context').setup({
-                enable = true
-            })
-        end,
-    }
+    -- {
+    --     "mfussenegger/nvim-lint",
+    --     config = function()
+    --         require('lint').linter_by_ft = {
+    --             javascript = { 'eslint' },
+    --             typescript = { 'eslint' }
+    --         }
+    --         vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
+    --             callback = function()
+    --                 require('lint').try_lint()
+    --             end
+    --         })
+    --     end
+    -- },
+    -- {
+    --     "nvim-treesitter/nvim-treesitter-context",
+    --     config = function()
+    --         require('treesitter-context').setup({
+    --             enable = true
+    --         })
+    --     end,
+    -- }
 }
