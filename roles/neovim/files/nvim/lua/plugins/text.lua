@@ -1,9 +1,4 @@
 return {
-    -- {
-    --     'windwp/nvim-autopairs',
-    --     event = "InsertEnter",
-    --     config = true
-    -- },
     {
         "HiPhish/rainbow-delimiters.nvim",
     },
@@ -46,12 +41,4 @@ return {
     --         })
     --     end
     -- },
-    -- {
-    --     "nvim-treesitter/nvim-treesitter-context",
-    --     config = function()
-    --         require('treesitter-context').setup({
-    --             enable = true
-    --         })
-    --     end,
-    -- }
 }
