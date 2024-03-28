@@ -34,5 +34,7 @@
       - "inetutils"
       - "core/less"
       - "openssh"
-      - "md5sum"
+      - "mhash"
+      - "python-pip"
+
   when: ansible_os_family == 'Archlinux'
