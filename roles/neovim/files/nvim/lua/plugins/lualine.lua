@@ -9,15 +9,16 @@ return {
     config = function()
         require('lualine').setup({
             options = { theme = "catppuccin" },
-            -- options = { theme = "rose-pine" },
-            -- sections = {
-            --     lualine_c = {
-            --         {
-
-            --             'buffers',
-            --         },
-            --     },
-            -- }
+            sections = {
+                lualine_c = {
+                    {
+                        'filename',
+                        file_status = true,
+                        path = 1,
+                        shorting_target = 40,
+                    },
+                },
+            }
         })
     end
 }

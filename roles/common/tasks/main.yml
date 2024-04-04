@@ -15,6 +15,7 @@
       - curl
       - jq
       - protobuf
+      - tldr
 
 - name: Install Debian Common tools
   become: true
@@ -36,5 +37,4 @@
       - "openssh"
       - "mhash"
       - "python-pip"
-
   when: ansible_os_family == 'Archlinux'

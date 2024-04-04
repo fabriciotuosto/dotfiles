@@ -16,5 +16,5 @@
     - database-clients
     - golang
     - elixir
-    # - rust
+    - rust
     # - docker

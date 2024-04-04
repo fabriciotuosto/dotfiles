@@ -1,0 +1,12 @@
+- name: Added Rust toolchain
+  shell: >
+     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+  args:
+    executable: /bin/zsh
+    chdir: "{{ ansible_env.HOME }}"
+
+- name: Update Rust toolchain
+  command: "rustup update"
+
+- name: Use default stable version
+  command: "rustup default stable"
