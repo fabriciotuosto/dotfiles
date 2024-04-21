@@ -159,7 +159,7 @@ return {
                     map("gr", require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
                     map("<leader>R", vim.lsp.buf.rename, "[R]ename")
                     map("K", vim.lsp.buf.hover, "Hover Documentation")
-                    map("<M-k>", vim.lsp.buf.signature_help, "Signature Help")
+                    map("<A-K>", vim.lsp.buf.signature_help, "Signature Help")
                     map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
                     map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
                     map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
@@ -178,7 +178,7 @@ return {
             },
             formatter_by_ft = {
                 lua = { 'stylua' },
-            }
+            },
         }
     }
 }

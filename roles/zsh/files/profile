@@ -29,3 +29,5 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN:$GOPATH
 . "$HOME/.cargo/env"
+
+alias weather="curl wttr.in"

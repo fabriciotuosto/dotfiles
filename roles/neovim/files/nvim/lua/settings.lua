@@ -20,12 +20,14 @@ vim.opt.fileencoding = 'utf-8'
 vim.opt.swapfile = false
 vim.opt.backup = false
 
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.termguicolors = true
-vim.opt.completeopt = "menu,menuone,preview,popup,noselect"
-vim.opt.updatetime = 100
+vim.opt.completeopt = "menu,menuone,preview"
+vim.opt.updatetime = 250
+vim.opt.breakindent = true
 
+vim.opt.undofile = true
 vim.opt.hidden = true
 vim.opt.list = true
 vim.opt.cmdheight = 1
@@ -40,7 +42,16 @@ vim.opt.smartcase = true
 ---------------------------------
 vim.diagnostic.config({
     float = false,
-    virtual_text = true,
+    virtual_text = false,
     update_in_insert = false,
     signs = true,
+    underline = true,
+})
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+    desc = "Highlight when yanking (copying) text",
+    group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
+    callback = function()
+        vim.highlight.on_yank()
+    end
 })

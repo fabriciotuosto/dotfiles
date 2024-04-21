@@ -1,5 +1,5 @@
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("v", "<", ":< <CR>gv")
 vim.keymap.set("v", ">", ":> <CR>gv")
 vim.keymap.set("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
@@ -16,8 +16,10 @@ vim.keymap.set('n', "<C-s>", ":w<CR>", { desc = "[S]ave Buffer" })
 
 vim.keymap.set('n', '<A-n>', ":bnext<CR>", { desc = "[N]ext Buffer" })
 vim.keymap.set('n', '<A-p>', ":bprev<CR>", { desc = "[P]revious Buffer" })
-vim.keymap.set('n', '<A-x>', ":bw<CR>", { desc =  "[X] close Buffer"  })
+vim.keymap.set('n', '<A-x>', ":bw<CR>", { desc = "[X] close Buffer" })
 
+vim.keymap.set('n', '<leader>L', ":cnext", { desc = "[L] Next Item Quickfix list" })
+vim.keymap.set('n', '<leader>H', ":cprev", { desc = "[L] Prev Item Quickfix list" })
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
