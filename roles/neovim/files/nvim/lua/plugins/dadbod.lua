@@ -6,7 +6,7 @@ return {
 
         "kristijanhusak/vim-dadbod-ui",
         config = function()
-            vim.keymap.set('n', '<leader>pp', ":DBUIToggle<cr>")
+            vim.keymap.set('n', '<leader>db', ":DBUIToggle<cr>")
         end,
         init = function()
             vim.g.db_ui_use_nerd_fonts = 1
