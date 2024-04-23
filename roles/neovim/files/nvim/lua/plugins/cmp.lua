@@ -65,6 +65,7 @@ return {
                     { name = 'cmdline' },
                     { name = 'luasnip' },
                     { name = 'buffer',  keyword_length = 5 },
+                    { name = 'vim-dadbod-completion'},
                 },
                 mapping = cmp.mapping.preset.insert({
                     ['C-m'] = cmp.mapping.complete(),

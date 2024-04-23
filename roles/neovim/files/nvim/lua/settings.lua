@@ -43,12 +43,13 @@ vim.opt.smartcase = true
 -- Floating diagnostics message
 ---------------------------------
 vim.diagnostic.config({
-    float = false,
+    float = true,
     virtual_text = false,
     update_in_insert = false,
     signs = true,
     underline = true,
 })
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
 
 vim.api.nvim_create_autocmd("TextYankPost", {
     desc = "Highlight when yanking (copying) text",

@@ -150,7 +150,6 @@ return {
                     map("gd", require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
                     map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
                     map('gi', require('telescope.builtin').lsp_incoming_calls, '[G]oto [I]comming Calls')
-                    map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
                     map("gD", vim.lsp.buf.declaration, '[G]oto [D]eclaration')
                     map("gr", require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
                     map("<leader>R", vim.lsp.buf.rename, "[R]ename")

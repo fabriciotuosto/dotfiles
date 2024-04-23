@@ -31,11 +31,6 @@ return {
                 end,
                 {}
             )
-            vim.keymap.set("n", "<C-f>",
-                function()
-                    builtin.find_files({ follow = true, no_ignore = false, hidden = false })
-                end,
-                {})
             vim.keymap.set("n", "<C-p>", builtin.git_files, {})
             vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
             vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
