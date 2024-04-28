@@ -2,7 +2,6 @@ return {
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'hrsh7th/cmp-buffer' },
     { 'hrsh7th/cmp-path' },
-    { 'hrsh7th/cmp-cmdline' },
     { 'hrsh7th/cmp-nvim-lsp-signature-help' },
     { 'ray-x/cmp-treesitter' },
     {
@@ -52,20 +51,21 @@ return {
                         maxwidth = 50,
                         ellipsis_char = '...',
                         menu = {
-                            buffer = "[buf]",
+                            buffer   = "[buf]",
                             nvim_lsp = "[lsp]",
-                            path = "[path]",
-                            luasnip = "[snip]"
+                            path     = "[path]",
+                            luasnip  = "[snip]"
                         }
                     })
                 },
                 sources = {
                     { name = 'nvim_lsp' },
+                    { name = 'nvim_lsp_signature_help' },
+                    { name = 'treesitter' },
+                    { name = 'buffer',                 keyword_length = 5 },
                     { name = 'path' },
-                    { name = 'cmdline' },
                     { name = 'luasnip' },
-                    { name = 'buffer',  keyword_length = 5 },
-                    { name = 'vim-dadbod-completion'},
+                    { name = 'vim-dadbod-completion' },
                 },
                 mapping = cmp.mapping.preset.insert({
                     ['C-m'] = cmp.mapping.complete(),
@@ -84,7 +84,7 @@ return {
                     }
                 },
                 experimental = {
-                    ghost_text = false
+                    ghost_text = true
                 },
             })
         end
