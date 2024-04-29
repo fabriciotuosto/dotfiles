@@ -163,7 +163,7 @@ return {
                     local client = vim.lsp.get_client_by_id(ev.data.client_id)
                     if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
                         map('<leader>th', function()
-                            vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled())
+                            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(), {})
                         end, '[T]oggle Inlay [H]ints')
                     end
                 end,

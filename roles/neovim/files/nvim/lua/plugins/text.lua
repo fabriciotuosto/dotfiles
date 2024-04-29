@@ -15,10 +15,6 @@ return {
             require("trim").setup({})
         end
     },
-    -- {
-    --     "mg979/vim-visual-multi",
-    --     lazy = false,
-    -- },
     {
         "kylechui/nvim-surround",
         version = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -27,20 +23,6 @@ return {
             require("nvim-surround").setup({})
         end
     },
-    -- {
-    --     "mfussenegger/nvim-lint",
-    --     config = function()
-    --         require('lint').linter_by_ft = {
-    --             javascript = { 'eslint' },
-    --             typescript = { 'eslint' }
-    --         }
-    --         vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
-    --             callback = function()
-    --                 require('lint').try_lint()
-    --             end
-    --         })
-    --     end
-    -- },
     {
         'stevearc/conform.nvim',
         opts = {
@@ -54,23 +36,41 @@ return {
             },
         }
     },
-    -- {
-    --     "mhartington/formatter.nvim",
-    --     event = "VeryLazy",
-    --     config = function()
-    --         require('formatter').setup({
-    --             filetype = {
-    --                 javascript = {
-    --                     require('formatter.filetypes.javascript').prettier
-    --                 },
-    --                 typescript = {
-    --                     require('formatter.filetypes.typescript').prettier
-    --                 },
-    --                 ["*"] = {
-    --                     require('formatter.filetypes.any').remove_trailing_whitespace
-    --                 }
-    --             }
-    --         })
-    --     end
-    -- },
+    --[[ {
+        "mg979/vim-visual-multi",
+        lazy = false,
+    },
+    {
+        "mfussenegger/nvim-lint",
+        config = function()
+            require('lint').linter_by_ft = {
+                javascript = { 'eslint' },
+                typescript = { 'eslint' }
+            }
+            vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
+                callback = function()
+                    require('lint').try_lint()
+                end
+            })
+        end
+    },
+    {
+        "mhartington/formatter.nvim",
+        event = "VeryLazy",
+        config = function()
+            require('formatter').setup({
+                filetype = {
+                    javascript = {
+                        require('formatter.filetypes.javascript').prettier
+                    },
+                    typescript = {
+                        require('formatter.filetypes.typescript').prettier
+                    },
+                    ["*"] = {
+                        require('formatter.filetypes.any').remove_trailing_whitespace
+                    }
+                }
+            })
+        end
+    }, ]]
 }
