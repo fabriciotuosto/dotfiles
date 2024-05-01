@@ -11,23 +11,13 @@ return {
             "saadparwaiz1/cmp_luasnip",
         },
         config = function()
-            local ls = require("luasnip")
-            ls.setup()
-            vim.keymap.set({ "i" }, "<C-Y>", function() ls.expand() end, { silent = true })
-            vim.keymap.set({ "i", "s" }, "<C-L>", function() ls.jump(1) end, { silent = true })
-            vim.keymap.set({ "i", "s" }, "<C-J>", function() ls.jump(-1) end, { silent = true })
-            vim.keymap.set({ "i", "s" }, "<C-E>", function()
-                if ls.choice_active() then
-                    ls.change_choice(1)
-                end
-            end, { silent = true })
         end
     },
     {
         "onsails/lspkind.nvim",
         config = function()
             require('lspkind').init({
-                mode = "symbol_text",
+                mode = "symbol",
                 preset = "default",
             })
         end
@@ -47,9 +37,10 @@ return {
                 },
                 formatting = {
                     format = lspkind.cmp_format({
-                        mode = 'symbol_text',
-                        maxwidth = 50,
+                        mode = 'symbol',
+                        maxwidth = 30,
                         ellipsis_char = '...',
+                        show_labelDetails = true,
                         menu = {
                             buffer   = "[buf]",
                             nvim_lsp = "[lsp]",
@@ -58,21 +49,39 @@ return {
                         }
                     })
                 },
+                completion = {
+                    completeopt = 'menu,menuone,noinsert,popup'
+                },
                 sources = {
                     { name = 'nvim_lsp' },
                     { name = 'nvim_lsp_signature_help' },
                     { name = 'treesitter' },
-                    { name = 'buffer',                 keyword_length = 5 },
+                    {
+                        name = 'buffer',
+                        option = { keyword_length = 5 }
+                    },
                     { name = 'path' },
                     { name = 'luasnip' },
                     { name = 'vim-dadbod-completion' },
                 },
                 mapping = cmp.mapping.preset.insert({
-                    ['C-m'] = cmp.mapping.complete(),
-                    ['C-y'] = cmp.mapping.confirm({
-                        behavior = cmp.ConfirmBehavior.Replace,
+                    ['<C-n>'] = cmp.mapping.select_next_item(),
+                    ['<C-p>'] = cmp.mapping.select_prev_item(),
+                    ['<C-Space>'] = cmp.mapping.complete(),
+                    ['<C-y>'] = cmp.mapping.confirm({
+                        -- behavior = cmp.ConfirmBehavior.Replace,
                         select = true,
-                    })
+                    }),
+                    ['<C-l>'] = cmp.mapping(function()
+                        if luasnip.expand_or_jumpable() then
+                            luasnip.expand_or_jump()
+                        end
+                    end, { 'i', 's' }),
+                    ['<C-h>'] = cmp.mapping(function()
+                        if luasnip.locally_jumpable(-1) then
+                            luasnip.jump(-1)
+                        end
+                    end, { 'i', 's' })
                 }),
                 sorting = {
                     comparators = {
