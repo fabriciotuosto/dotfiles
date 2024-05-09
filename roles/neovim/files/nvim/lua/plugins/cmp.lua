@@ -41,12 +41,12 @@ return {
                         maxwidth = 30,
                         ellipsis_char = '...',
                         show_labelDetails = true,
-                        menu = {
-                            buffer   = "[buf]",
-                            nvim_lsp = "[lsp]",
-                            path     = "[path]",
-                            luasnip  = "[snip]"
-                        }
+                        -- menu = {
+                        --     buffer   = " [buf] ",
+                        --     nvim_lsp = " [lsp] ",
+                        --     path     = " [path] ",
+                        --     luasnip  = " [snip] "
+                        -- }
                     })
                 },
                 completion = {
