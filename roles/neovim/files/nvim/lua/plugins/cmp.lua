@@ -44,15 +44,9 @@ return {
                 formatting = {
                     format = lspkind.cmp_format({
                         mode = 'symbol',
-                        maxwidth = 50,
+                        maxwidth = 40,
                         ellipsis_char = '...',
                         show_labelDetails = true,
-                        -- menu = {
-                        --     buffer   = " [buf] ",
-                        --     nvim_lsp = " [lsp] ",
-                        --     path     = " [path] ",
-                        --     luasnip  = " [snip] "
-                        -- }
                     })
                 },
                 completion = {
