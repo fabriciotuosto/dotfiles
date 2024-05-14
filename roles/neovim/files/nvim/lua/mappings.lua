@@ -2,7 +2,7 @@
 vim.keymap.set("n", "<leader>x", vim.cmd.Ex)
 -- Clear highlighted searches
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
--- Indent
+-- Indent selected block and reselect block
 vim.keymap.set("v", "<", ":< <CR>gv")
 vim.keymap.set("v", ">", ":> <CR>gv")
 -- Move blocks of text up and down
@@ -31,7 +31,7 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagn
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 -- Moving splits
-vim.keymap.set('n', '<M-,>', "<C-w>5>")
-vim.keymap.set('n', '<M-.>', "<C-w>5<")
+vim.keymap.set('n', '<M-,>', "<C-w>5<")
+vim.keymap.set('n', '<M-.>', "<C-w>5>")
 vim.keymap.set('n', '<M-t>', "<C-w>+")
 vim.keymap.set('n', '<M-s>', "<C-w>-")
