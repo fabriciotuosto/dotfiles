@@ -18,6 +18,7 @@ require("mason-lspconfig").setup({
         "yamlls",
         "gopls",
         "bufls",
+        "zls",
     },
     handlers = require('config.lspservers')
 })
