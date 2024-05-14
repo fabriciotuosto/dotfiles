@@ -8,7 +8,10 @@ return {
     },
     config = function()
         require('lualine').setup({
-            options = { theme = "catppuccin" },
+            options = {
+                theme = "catppuccin",
+                globalstatus = true,
+            },
             sections = {
                 lualine_c = {
                     {
