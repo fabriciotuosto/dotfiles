@@ -23,7 +23,7 @@ cmp.setup({
         })
     },
     completion = {
-        completeopt = 'menu,menuone,noinsert,popup'
+        completeopt = 'menu,menuone,noinsert,noselect,popup'
     },
     sources = {
         { name = 'nvim_lsp' },
@@ -31,7 +31,7 @@ cmp.setup({
         { name = 'treesitter' },
         {
             name = 'buffer',
-            option = { keyword_length = 5 }
+            option = { keyword_length = 3 }
         },
         { name = 'path' },
         { name = 'luasnip' },
@@ -40,6 +40,7 @@ cmp.setup({
         ['<C-n>'] = cmp.mapping.select_next_item(),
         ['<C-p>'] = cmp.mapping.select_prev_item(),
         ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-x>'] = cmp.mapping.abort(),
         ['<C-y>'] = cmp.mapping.confirm({
             -- behavior = cmp.ConfirmBehavior.Replace,
             select = true,

@@ -17,6 +17,14 @@ return {
         end
     },
     {
+        "zeioth/garbage-day.nvim",
+        dependencies = "neovim/nvim-lspconfig",
+        event = "VeryLazy",
+        opts = {
+            -- your options here
+        }
+    },
+    {
         'stevearc/conform.nvim',
         opts = {
             notify_on_error = false,
@@ -29,9 +37,4 @@ return {
             },
         }
     },
-    {
-        'folke/neodev.nvim',
-        config = function()
-        end,
-    }
 }

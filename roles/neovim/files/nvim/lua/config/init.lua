@@ -35,7 +35,7 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.termguicolors = true
 -- Popups
-vim.opt.completeopt = "menu,menuone,noinsert,popup"
+vim.opt.completeopt = "menu,menuone,noinsert,noselect,popup"
 -- Splits
 vim.opt.inccommand = 'split'
 vim.opt.splitright = true
@@ -50,7 +50,7 @@ vim.opt.backup = false
 -- Diagnostic configurations
 ---------------------------------
 vim.diagnostic.config({
-    float = false,
+    float = false, -- { border = 'rounded' }
     virtual_text = false,
     update_in_insert = false,
     signs = true,
