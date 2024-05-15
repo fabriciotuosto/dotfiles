@@ -28,5 +28,10 @@ return {
                 lua = { 'stylua' },
             },
         }
+    },
+    {
+        'folke/neodev.nvim',
+        config = function()
+        end,
     }
 }

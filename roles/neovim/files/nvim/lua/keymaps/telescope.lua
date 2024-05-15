@@ -26,3 +26,9 @@ end, {})
 vim.keymap.set('n', '<leader>en', function()
     builtin.find_files({ cwd = vim.fn.stdpath("config") })
 end)
+vim.keymap.set('n', '<leader>/', function()
+    builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({
+        windblend = 10,
+        previewer = false,
+    }))
+end, { desc = '[/] Fuzzy find in current buffer' })
