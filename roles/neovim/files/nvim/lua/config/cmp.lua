@@ -35,7 +35,6 @@ cmp.setup({
         },
         { name = 'path' },
         { name = 'luasnip' },
-        { name = 'vim-dadbod-completion' },
     },
     mapping = cmp.mapping.preset.insert({
         ['<C-n>'] = cmp.mapping.select_next_item(),
@@ -68,4 +67,12 @@ cmp.setup({
     experimental = {
         ghost_text = true
     },
+})
+
+
+cmp.setup.filetype({ "sql" }, {
+    sources = {
+        { name = 'vim-dadbod-completion' },
+        { name = 'buffer' },
+    }
 })

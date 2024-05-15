@@ -6,12 +6,9 @@ return {
 
         "kristijanhusak/vim-dadbod-ui",
         config = function()
-            vim.keymap.set('n', '<leader>dc', ":DBUIToggle<cr>")
-        end,
-        init = function()
             vim.g.db_ui_use_nerd_fonts = 1
+            require('keymaps.dadbod')
         end,
-        -- lazy = true,
     },
     {
         "kristijanhusak/vim-dadbod-completion",
