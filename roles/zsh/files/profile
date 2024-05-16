@@ -3,6 +3,11 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# source $PERSONAL/env
+
+# for i in `find -L $PERSONAL`; do
+#     source $i
+# done
 alias vim=nvim
 alias vi=nvim
 alias code=nvim
@@ -16,18 +21,18 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias fd=fd-find
 alias z=zoxide
+alias weather="clear && curl wttr.in"
 
+export EDITOR='nvim'
 export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
 export NVM_DIR="$HOME/.nvm"
-source $NVM_DIR/nvm.sh
-
-source $HOME/.asdf/asdf.sh
-export EDITOR='nvim'
-
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN:$GOPATH
-. "$HOME/.cargo/env"
 
-alias weather="curl wttr.in"
+source $NVM_DIR/nvm.sh
+source $HOME/.asdf/asdf.sh
+
+bindkey -s ^f "~/.local/bin/tmux/new-tmux-session.sh \n"
+. "$HOME/.cargo/env"

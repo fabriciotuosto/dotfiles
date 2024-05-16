@@ -60,3 +60,10 @@
     dest: "{{ ansible_user_dir }}/.p10k.zsh"
     state: link
     force: true
+
+- name: "Link local scripts"
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/bin"
+    dest: "{{ ansible_user_dir }}/.local/bin"
+    state: link
+    force: true

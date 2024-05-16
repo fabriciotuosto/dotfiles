@@ -1,16 +1,16 @@
 local builtin = require("telescope.builtin")
 
-vim.keymap.set("n", "<C-f>",
+vim.keymap.set("n", "<leader>ff",
     function()
         builtin.find_files({ follow = true, no_ignore = true, hidden = true })
     end,
-    {}
+    { desc = "[F]ind [F]iles in directory" }
 )
-vim.keymap.set("n", "<C-p>", builtin.git_files, {})
-vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
-vim.keymap.set("n", "<leader>fvc", builtin.commands, {})
-vim.keymap.set("n", "<leader>fvo", builtin.vim_options, {})
+vim.keymap.set("n", "<leader>fp", builtin.git_files, { desc = "[F]ind [P]rojects files" })
+vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[F]ind [G]rep in project files" })
+vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "[F]ind [B]uffers" })
+vim.keymap.set("n", "<leader>fvc", builtin.commands, { desc = "[F]ind [V]im [C]ommands" })
+vim.keymap.set("n", "<leader>fvo", builtin.vim_options, { desc = "[F]ind [V]im [O]ptions" })
 vim.keymap.set("n", "<leader>fq", builtin.quickfix, {})
 vim.keymap.set("n", "<leader>fd", builtin.diagnostics, {})
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
