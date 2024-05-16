@@ -5,6 +5,7 @@ vim.g.maplocalleader = " "
 vim.opt.clipboard = "unnamedplus"
 vim.opt.cmdheight = 1
 vim.opt.list = true
+vim.opt.wrap = false
 vim.opt.ruler = true
 vim.opt.title = true
 vim.opt.hidden = true
@@ -15,14 +16,14 @@ vim.opt.updatetime = 250
 -- Side numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
--- Indent
-vim.opt.expandtab = true
-vim.opt.smarttab = true
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
+-- Scroll limit
 vim.opt.scrolloff = 10
-vim.opt.wrap = false
+-- Indent
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+vim.opt.smarttab = true
+vim.opt.expandtab = true
 vim.opt.breakindent = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
@@ -45,6 +46,8 @@ vim.opt.undofile = true
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.swapfile = false
 vim.opt.backup = false
+-- Update buffer on external write
+vim.opt.autoread = true
 
 ---------------------------------
 -- Diagnostic configurations
