@@ -1,13 +1,7 @@
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
+for i in `find -L $HOME/.local/bin -type d`; do
+    PATH="$i:$PATH"
+done
 
-# source $PERSONAL/env
-
-# for i in `find -L $PERSONAL`; do
-#     source $i
-# done
 alias vim=nvim
 alias vi=nvim
 alias code=nvim
@@ -26,13 +20,18 @@ alias weather="clear && curl wttr.in"
 export EDITOR='nvim'
 export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
-export NVM_DIR="$HOME/.nvm"
+export NVM_DIR=$HOME/.nvm
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN:$GOPATH
 
 source $NVM_DIR/nvm.sh
 source $HOME/.asdf/asdf.sh
+source $HOME/.cargo/env
 
-bindkey -s ^f "~/.local/bin/tmux/new-tmux-session.sh \n"
-. "$HOME/.cargo/env"
+runNewTmuxSession(){
+    echo; new-tmux-session; zle redisplay
+}
+zle -N runNewTmuxSession
+
+bindkey ^p runNewTmuxSession
