@@ -42,15 +42,31 @@ require('nvim-treesitter.configs').setup({
         additional_vim_regex_highlighting = false,
     },
     textobjects = {
+        move = {
+            enable = true,
+            set_jumps = true,
+            goto_next_start = {
+                ["]f"] = "@function.outer"
+            },
+            goto_next_end = {
+                ["]F"] = "@function.outer"
+            },
+            goto_prev_start = {
+                ["[f"] = "@function.outer"
+            },
+            goto_prev_end = {
+                ["[F"] = "@function.outer"
+            },
+        },
         select = {
             enable = true,
             lookahead = true,
+            keymaps = {
+                ["af"] = "@function.outer",
+                ["if"] = "@function.inner",
+                ["ac"] = "@class.outer",
+                ["ic"] = "@class.inner",
+            }
         },
-        keymaps = {
-            ["af"] = "@function.outer",
-            ["if"] = "@function.inner",
-            ["ac"] = "@class.outer",
-            ["ic"] = "@class.inner",
-        }
     }
 })
