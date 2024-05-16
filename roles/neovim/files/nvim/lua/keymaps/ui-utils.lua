@@ -6,5 +6,4 @@ vim.keymap.set("n", "]t", function() require("trouble").next({ skip_groups = tru
     { desc = "Trouble Next" })
 vim.keymap.set("n", "[t", function() require("trouble").previous({ skip_groups = true, jump = true }) end,
     { desc = "Trouble Prev" })
-
 vim.keymap.set("n", "<leader>td", "<cmd> TodoTrouble <cr>", { desc = "Todo Quick fix view" })
