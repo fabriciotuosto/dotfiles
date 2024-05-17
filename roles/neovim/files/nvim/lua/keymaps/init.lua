@@ -1,7 +1,7 @@
 -- Open Netrw
-vim.keymap.set("n", "<leader>x", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>x", vim.cmd.Ex, { desc = "E[X]plorer" })
 -- Clear highlighted searches
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch <CR>')
 -- Indent selected block and reselect block
 vim.keymap.set("v", "<", ":< <CR>gv")
 vim.keymap.set("v", ">", ":> <CR>gv")
@@ -36,6 +36,6 @@ vim.keymap.set('n', '<M-.>', "<C-w>5<")
 vim.keymap.set('n', '<M-t>', "<C-w>+")
 vim.keymap.set('n', '<M-s>', "<C-w>-")
 -- UndoTree
-vim.keymap.set('n', '<leader>U', vim.cmd.UndotreeToggle)
+vim.keymap.set('n', '<leader>U', vim.cmd.UndotreeToggle, { desc = "[U]ndo Tree" })
 -- Launch a new tmux session
 vim.keymap.set("n", "<C-p>", "<cmd>silent !tmux neww new-tmux-session<CR>")

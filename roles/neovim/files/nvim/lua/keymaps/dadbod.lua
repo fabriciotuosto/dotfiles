@@ -1,1 +1,1 @@
-vim.keymap.set('n', '<leader>dc', ":DBUIToggle<cr>")
+vim.keymap.set('n', '<leader>dc', ":DBUIToggle<cr>", { desc = "[D]atabase [C]lient" })
