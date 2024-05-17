@@ -3,13 +3,6 @@ return {
         "HiPhish/rainbow-delimiters.nvim",
     },
     {
-        "numToStr/Comment.nvim",
-        lazy = false,
-        config = function()
-            require('Comment').setup({})
-        end
-    },
-    {
         "cappyzawa/trim.nvim",
         config = function()
             require("trim").setup({})
@@ -36,8 +29,4 @@ return {
             },
         }
     },
-    --[[ {
-        "mg979/vim-visual-multi",
-        lazy = false,
-    },]]
 }
