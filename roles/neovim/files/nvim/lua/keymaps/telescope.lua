@@ -16,6 +16,7 @@ vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "[F]ind [B]uffers" }
 vim.keymap.set("n", "<leader>fvc", builtin.commands, { desc = "[F]ind [V]im [C]ommands" })
 vim.keymap.set("n", "<leader>fvo", builtin.vim_options, { desc = "[F]ind [V]im [O]ptions" })
 vim.keymap.set("n", "<leader>fvh", builtin.help_tags, { desc = "[F]ind [H]elp" })
+vim.keymap.set("n", "<leader>fvk", builtin.keymaps, { desc = "[F]ind [K]eymaps" })
 vim.keymap.set("n", "<leader>fq", builtin.quickfix, { desc = "[F]ind [Q]uickfix" })
 vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "[F]ind [D]iagnostics" })
 vim.keymap.set("n", "<leader>fm", builtin.man_pages, { desc = "[F]ind [M]an pages" })

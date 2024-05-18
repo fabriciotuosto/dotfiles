@@ -3,6 +3,9 @@ return function(opts)
         capabilities = opts.capabilities,
         settings = {
             Lua = {
+                hint = {
+                    enable = true,
+                },
                 runtime = { version = "LuaJIT" },
                 workspace = {
                     checkThirdParty = false,
