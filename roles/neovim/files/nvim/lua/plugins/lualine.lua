@@ -9,7 +9,7 @@ return {
     config = function()
         require('lualine').setup({
             options = {
-                theme = "catppuccin",
+                theme = "kanagawa",
                 globalstatus = true,
             },
             sections = {

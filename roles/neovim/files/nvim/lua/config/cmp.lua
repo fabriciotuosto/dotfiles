@@ -27,17 +27,17 @@ cmp.setup({
     completion = {
         completeopt = 'menu,menuone,noinsert,noselect,popup'
     },
-    sources = {
+    sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'nvim_lsp_signature_help' },
+        { name = 'luasnip' },
         { name = 'treesitter' },
         {
             name = 'buffer',
             option = { keyword_length = 3 }
         },
         { name = 'path' },
-        { name = 'luasnip' },
-    },
+    }),
     mapping = cmp.mapping.preset.insert({
         ['<C-n>'] = cmp.mapping.select_next_item(),
         ['<C-p>'] = cmp.mapping.select_prev_item(),
@@ -58,15 +58,6 @@ cmp.setup({
             end
         end, { 'i', 's' })
     }),
-    sorting = {
-        comparators = {
-            cmp.config.compare.exact,
-            cmp.config.compare.kind,
-            cmp.config.compare.sort_text,
-            cmp.config.compare.score,
-            cmp.config.compare.locality,
-        }
-    },
     experimental = {
         ghost_text = true
     },
