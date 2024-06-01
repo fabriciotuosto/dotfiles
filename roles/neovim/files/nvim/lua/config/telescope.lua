@@ -16,7 +16,6 @@ require("telescope").setup({
             ".github",
             "deps",
             "target",
-            ".mypy_cache"
         }
     }
 })
