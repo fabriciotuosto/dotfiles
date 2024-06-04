@@ -1,0 +1,9 @@
+# Installing erlang
+- name: Add ruby plugin to asdf
+  command: "${HOME}/.asdf/bin/asdf plugin-add ruby"
+
+- name: Install ruby with asdf
+  command: "${HOME}/.asdf/bin/asdf install ruby latest"
+
+- name: Set global version for golang to latest
+  command: "${HOME}/.asdf/bin/asdf global ruby latest"

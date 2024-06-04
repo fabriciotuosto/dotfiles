@@ -16,6 +16,7 @@
       - jq
       - protobuf
       - tldr
+      - luarocks
 
 - name: Install Debian Common tools
   become: true

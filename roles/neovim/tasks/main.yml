@@ -9,6 +9,8 @@
     name:
       - "tree-sitter"
       - "tree-sitter-cli"
+      - "julia"
+      - "python-pynvim"
   when: ansible_os_family == 'Archlinux'
 
 - name: Node neovim package

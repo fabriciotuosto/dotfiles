@@ -11,7 +11,8 @@ return {
             "saadparwaiz1/cmp_luasnip",
         },
         config = function()
-        end
+        end,
+        build = "make install_jsregexp",
     },
     {
         "onsails/lspkind.nvim",
