@@ -9,7 +9,7 @@ return {
                     gitsigns = true,
                     nvimtree = true,
                     treesitter = true,
-                    notify = true,
+                    notify = false,
                     mini = false,
                     dap = {
                         enabled = true,
@@ -17,7 +17,37 @@ return {
                     }
                 }
             })
-            vim.cmd([[colorscheme catppuccin-mocha]])
         end
     },
+    {
+        'AlexvZyl/nordic.nvim',
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require('nordic').load()
+        end
+    },
+    {
+        "ellisonleao/gruvbox.nvim",
+        priority = 1000,
+        config = function()
+            require('gruvbox').setup({})
+        end,
+    },
+    {
+        "Mofiqul/dracula.nvim",
+        config = function()
+            require('dracula').setup({})
+        end
+    },
+    {
+        'rose-pine/neovim',
+        name = 'rose-pine',
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require('rose-pine').setup({})
+        end
+    }
+
 }

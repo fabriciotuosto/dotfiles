@@ -1,8 +1,5 @@
 return {
     {
-        "HiPhish/rainbow-delimiters.nvim",
-    },
-    {
         "cappyzawa/trim.nvim",
         config = function()
             require("trim").setup({})

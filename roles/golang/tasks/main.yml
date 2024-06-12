@@ -1,6 +1,6 @@
 - name: Go version
   set_fact:
-    go_version: 1.22.1
+    go_version: 1.22.4
 
 - name: Add golang plugin to asdf
   command: "${HOME}/.asdf/bin/asdf plugin-add golang"

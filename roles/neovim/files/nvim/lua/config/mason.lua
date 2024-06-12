@@ -1,5 +1,4 @@
 require("mason").setup({})
-require("mason-bridge").setup({})
 require("mason-lspconfig").setup({
     ensure_installed = {
         "bashls",
@@ -24,11 +23,14 @@ require("mason-lspconfig").setup({
     handlers = require('config.lspservers')
 })
 
+-- require("mason-bridge").setup({})
 require("conform").setup({
     notify_on_error = false,
     format_on_save = {
         timeout_ms = 500,
-        lsp_fallback = true
+        lsp_fallback = true,
+        -- async = true,
+        -- dry_run = false,
     },
-    formatters_by_ft = require("mason-bridge").get_formatters(),
+    -- formatters_by_ft = require("mason-bridge").get_formatters(),
 })

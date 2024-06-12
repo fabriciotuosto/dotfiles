@@ -19,8 +19,8 @@ cmp.setup({
     formatting = {
         format = lspkind.cmp_format({
             mode = 'symbol',
-            maxwidth = 40,
-            ellipsis_char = '...',
+            maxwidth = 20,
+            ellipsis_char = '_',
             show_labelDetails = true,
         })
     },
@@ -31,7 +31,6 @@ cmp.setup({
         { name = 'nvim_lsp' },
         { name = 'nvim_lsp_signature_help' },
         { name = 'luasnip' },
-        { name = 'treesitter' },
         {
             name = 'buffer',
             option = { keyword_length = 3 }

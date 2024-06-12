@@ -6,21 +6,6 @@ return {
         }
     },
     config = function()
-        require('lualine').setup({
-            options = {
-                theme = "catppuccin",
-                globalstatus = true,
-            },
-            sections = {
-                lualine_c = {
-                    {
-                        'filename',
-                        file_status = true,
-                        path = 1,
-                        shorting_target = 40,
-                    },
-                },
-            }
-        })
+        require('config.theme')
     end
 }
