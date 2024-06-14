@@ -25,7 +25,7 @@ cmp.setup({
         })
     },
     completion = {
-        completeopt = 'menu,menuone,noinsert,noselect,popup'
+        completeopt = 'menu,menuone,noinsert,noselect,popup,fuzzy'
     },
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },

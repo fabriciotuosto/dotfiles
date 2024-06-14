@@ -4,13 +4,14 @@ vim.g.maplocalleader   = " "
 -- Some nice defaults
 vim.opt.clipboard      = "unnamedplus"
 vim.opt.cmdheight      = 1
-vim.opt.list           = true
+vim.opt.list           = false
 vim.opt.wrap           = false
 vim.opt.ruler          = true
 vim.opt.title          = true
 vim.opt.hidden         = true
 vim.opt.smartcase      = true
 vim.opt.cursorline     = true
+vim.opt.cursorlineopt  = "number,screenline"
 vim.g.have_nerd_font   = true
 vim.opt.updatetime     = 250
 -- Side numbers
@@ -25,8 +26,6 @@ vim.opt.shiftwidth     = 4
 vim.opt.softtabstop    = 4
 vim.opt.smarttab       = true
 vim.opt.expandtab      = true
-vim.opt.breakindent    = true
-vim.opt.smartindent    = true
 vim.opt.autoindent     = true
 vim.opt.copyindent     = true
 -- Encoding
@@ -38,7 +37,7 @@ vim.opt.incsearch      = true
 vim.opt.termguicolors  = true
 vim.opt.inccommand     = 'split'
 -- Popups
-vim.opt.completeopt    = "menu,menuone,noinsert,noselect,popup"
+vim.opt.completeopt    = "menu,menuone,noinsert,noselect,popup,fuzzy"
 -- Splits
 vim.opt.inccommand     = 'split'
 vim.opt.splitright     = true
@@ -50,6 +49,7 @@ vim.opt.swapfile       = false
 vim.opt.backup         = false
 -- Update buffer on external write
 vim.opt.autoread       = true
+vim.opt.autowrite      = true
 -- Syntax highlighting in strings for augroups, lua, perl, python, javascript.
 vim.g.vimsyn_embed     = 'alpPrjfh'
 ---------------------------------
@@ -74,3 +74,13 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         vim.highlight.on_yank()
     end
 })
+
+----------------------------------
+-- Rounded border for modals
+----------------------------------
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+    opts = opts or {}
+    opts.border = opts.border or "rounded"
+    return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end
