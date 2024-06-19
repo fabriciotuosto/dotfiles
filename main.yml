@@ -15,7 +15,7 @@
     # Programming SDKs
     - database-clients
     - golang
-    - elixir
+    - erlang
     - rust
     - ruby
     # - docker

@@ -29,6 +29,7 @@
   set_fact:
     elixir_version: 1.13.4-otp-24
     erlang_version: 24.2.2
+    gleam_version: 1.2.1
 
 # Installing erlang
 - name: Add erlang plugin to asdf
@@ -49,3 +50,10 @@
 
 - name: Set global version for golang to {{elixir_version}}
   command: "${HOME}/.asdf/bin/asdf global elixir {{elixir_version}}"
+
+# Installing Gleam
+- name: Add erlang plugin to asdf
+  command: "${HOME}/.asdf/bin/asdf plugin-add gleam"
+
+- name: Install Gleam {{gleam_version}} with asdf
+  command: "${HOME}/.asdf/bin/asdf install gleam {{ gleam_version}}"
