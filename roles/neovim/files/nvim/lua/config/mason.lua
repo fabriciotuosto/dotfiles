@@ -22,8 +22,9 @@ require("mason-lspconfig").setup({
     },
     handlers = require('config.lspservers')
 })
-
 require("mason-bridge").setup({})
+require("config.lspservers.gleam")({})
+
 require("conform").setup({
     notify_on_error = false,
     format_on_save = {
