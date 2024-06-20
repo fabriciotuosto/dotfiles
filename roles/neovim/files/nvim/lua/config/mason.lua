@@ -35,3 +35,4 @@ require("conform").setup({
     },
     formatters_by_ft = require("mason-bridge").get_formatters(),
 })
+require('lint').linters_by_ft = require("mason-bridge").get_linters()

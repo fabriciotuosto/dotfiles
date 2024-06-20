@@ -1,5 +1,11 @@
 return {
     {
+        'stevearc/conform.nvim',
+    },
+    {
+        'mfussenegger/nvim-lint',
+    },
+    {
         "williamboman/mason.nvim",
     },
     {
@@ -16,8 +22,5 @@ return {
         config = function()
             require('keymaps.lsp')
         end
-    },
-    {
-        'stevearc/conform.nvim',
     },
 }
