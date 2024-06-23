@@ -1,5 +1,5 @@
 local builtin = require("telescope.builtin")
-
+local themes = require('telescope.themes')
 vim.keymap.set("n", "<leader>ff",
     function()
         builtin.find_files({ follow = true, no_ignore = true, hidden = true })
@@ -24,7 +24,7 @@ vim.keymap.set("n", "<leader>fw", function()
     local word = vim.fn.expand('<cword>')
     builtin.grep_string({ search = word })
 end, { desc = "[F]ind [w]ord under cursor" })
-vim.keymap.set("n", "<leader>fWs", function()
+vim.keymap.set("n", "<leader>fW", function()
     local word = vim.fn.expand('<cWORD>')
     builtin.grep_string({ search = word })
 end, { desc = "[F]ind [W]ord under cursor" })
@@ -32,7 +32,7 @@ vim.keymap.set('n', '<leader>en', function()
     builtin.find_files({ cwd = vim.fn.stdpath("config") })
 end, { desc = "[E]dit [N]eovim configuration" })
 vim.keymap.set('n', '<leader>/', function()
-    builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({
+    builtin.current_buffer_fuzzy_find(themes.get_dropdown({
         windblend = 10,
         previewer = false,
     }))

@@ -1,6 +1,3 @@
--- Leader
-vim.g.mapleader        = " "
-vim.g.maplocalleader   = " "
 -- Some nice defaults
 vim.opt.clipboard      = "unnamedplus"
 vim.opt.cmdheight      = 1
