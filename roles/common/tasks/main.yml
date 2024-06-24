@@ -38,4 +38,16 @@
       - "openssh"
       - "mhash"
       - "python-pip"
+      - "base-devel"
+      - "reflector"
+  when: ansible_os_family == 'Archlinux'
+
+
+- name: Optmimize Arch Pacman
+  become: true
+  shell: |
+    cp /etc/pacman.d/mirroorlist /etc/pacman.d/mirrorlist.bak
+    reflector --save /etc/pacman.d/mirroorlist --protocol https --sort rate --latest 10
+  args:
+    executable: /bin/bash
   when: ansible_os_family == 'Archlinux'
