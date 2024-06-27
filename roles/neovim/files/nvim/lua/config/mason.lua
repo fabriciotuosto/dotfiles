@@ -7,7 +7,6 @@ require("mason-lspconfig").setup({
         "angularls",
         "dockerls",
         "docker_compose_language_service",
-        "elixirls",
         "emmet_ls",
         "html",
         "lua_ls",
