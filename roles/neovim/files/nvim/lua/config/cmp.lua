@@ -19,9 +19,10 @@ cmp.setup({
     formatting = {
         format = lspkind.cmp_format({
             mode = 'symbol',
-            maxwidth = 20,
-            ellipsis_char = '_',
+            maxwidth = 40,
+            ellipsis_char = '...',
             show_labelDetails = true,
+            -- before = require("nvim-highlight-colors").format
         })
     },
     completion = {
