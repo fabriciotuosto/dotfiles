@@ -17,6 +17,8 @@
       - protobuf
       - tldr
       - luarocks
+      - ffmpeg
+      - yt-dlp
 
 - name: Install Debian Common tools
   become: true
@@ -38,6 +40,7 @@
       - "openssh"
       - "mhash"
       - "python-pip"
+      - "python-numpy"
       - "base-devel"
       - "reflector"
       - "clang"

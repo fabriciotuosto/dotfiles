@@ -18,4 +18,8 @@
     - erlang
     - rust
     - ruby
+    - nim
+    - zig
+    - odin
+    # - mojo
     # - docker

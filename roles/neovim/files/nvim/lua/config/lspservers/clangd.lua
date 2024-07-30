@@ -1,7 +1,7 @@
 return function(opts)
     local util = require("lspconfig/util")
-    require('lspconfig').gleam.setup({
+    require('lspconfig').clangd.setup({
         capabilities = opts.capabilities,
-        root_dir = util.find_git_ancestor,
+        root_dir = util.root_pattern(".clangd"),
     })
 end

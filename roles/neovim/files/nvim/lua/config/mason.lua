@@ -4,7 +4,6 @@ require("mason-lspconfig").setup({
         "bashls",
         "cssls",
         "jsonls",
-        "angularls",
         "dockerls",
         "docker_compose_language_service",
         "emmet_ls",
@@ -16,14 +15,13 @@ require("mason-lspconfig").setup({
         "templ",
         "yamlls",
         "gopls",
-        "bufls",
+        "clangd",
         "zls",
     },
     handlers = require('config.lspservers')
 })
 require("mason-bridge").setup({})
-require("config.lspservers.gleam")({})
-
+-- Configure Mason installed formatters
 require("conform").setup({
     notify_on_error = false,
     format_on_save = {
@@ -34,4 +32,5 @@ require("conform").setup({
     },
     formatters_by_ft = require("mason-bridge").get_formatters(),
 })
+-- Configure Mason installed linters
 require('lint').linters_by_ft = require("mason-bridge").get_linters()

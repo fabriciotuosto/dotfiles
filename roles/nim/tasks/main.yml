@@ -1,0 +1,6 @@
+- name: Install nim language compiler
+  become: true
+  ansible.builtin.package:
+    state: present
+    name:
+      - "nim"
