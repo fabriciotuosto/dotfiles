@@ -3,9 +3,10 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/ ~/.config ~/Projects/Intuitivo ~/Projects/Tools ~/Projects/Learning/ -mindepth 1 -maxdepth 1 -xtype d | fzf)
+   search=$(find ~/.config ~/Tools ~/Projects/Intuitivo/ -mindepth 1 -maxdepth 1 -xtype d)
+   search+=$(find ~/Learning/ ~/Projects -mindepth 1 -maxdepth 2 -xtype d)
+   selected=$(echo "$search" | fzf)
 fi
-
 if [[ -z $selected ]]; then
     exit 0
 fi

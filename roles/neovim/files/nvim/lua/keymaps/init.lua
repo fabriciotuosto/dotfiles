@@ -38,4 +38,4 @@ vim.keymap.set('n', '<M-s>', "<C-w>-")
 -- UndoTree
 vim.keymap.set('n', '<leader>U', vim.cmd.UndotreeToggle, { desc = "[U]ndo Tree" })
 -- Launch a new tmux session
-vim.keymap.set("n", "<C-p>", "<cmd>silent !tmux neww new-tmux-session<CR>", { desc = "Search for [P]rojects" })
+vim.keymap.set("n", "<C-P>", "<cmd>silent !tmux neww new-tmux-session<CR>", { desc = "Search for [P]rojects" })
