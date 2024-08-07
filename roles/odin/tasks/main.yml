@@ -1,4 +1,4 @@
 - name: Clone oding
   git:
     repo: 'https://github.com/odin-lang/Odin'
-    dest: '{{ansible_env.HOME}}/Projects/Tools/Odin'
+    dest: '{{ansible_env.HOME}}/Tools/Odin'
