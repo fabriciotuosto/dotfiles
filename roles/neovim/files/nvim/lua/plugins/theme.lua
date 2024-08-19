@@ -3,20 +3,6 @@ return {
     --     "catppuccin/nvim",
     --     priority = 1000,
     --     config = function()
-    --         require("catppuccin").setup({
-    --             integrations = {
-    --                 cmp = true,
-    --                 gitsigns = true,
-    --                 nvimtree = true,
-    --                 treesitter = true,
-    --                 notify = false,
-    --                 mini = false,
-    --                 dap = {
-    --                     enabled = true,
-    --                     enable_ui = true,
-    --                 }
-    --             }
-    --         })
     --     end
     -- },
     -- {
@@ -34,12 +20,14 @@ return {
     --         require('gruvbox').setup({})
     --     end,
     -- },
-    -- {
-    --     "Mofiqul/dracula.nvim",
-    --     config = function()
-    --         require('dracula').setup({})
-    --     end
-    -- },
+    {
+        "Mofiqul/dracula.nvim",
+        config = function()
+            require('dracula').setup({
+                transparent_bg = true, -- default false
+            })
+        end
+    },
     {
         'rose-pine/neovim',
         name = 'rose-pine',
@@ -48,6 +36,5 @@ return {
         config = function()
             require('rose-pine').setup({})
         end
-    }
-
+    },
 }

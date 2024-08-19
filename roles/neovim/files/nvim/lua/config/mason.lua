@@ -17,6 +17,7 @@ require("mason-lspconfig").setup({
         "gopls",
         "clangd",
         "zls",
+        "elixirls",
     },
     handlers = require('config.lspservers')
 })

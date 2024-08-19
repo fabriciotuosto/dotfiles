@@ -1,12 +1,8 @@
-local theme = "rose-pine"
--- vim.cmd([[colorscheme catppuccin-mocha]])
--- vim.cmd("colorscheme rose-pine")
--- vim.cmd("colorscheme nordic")
-vim.cmd("colorscheme " .. theme)
+vim.cmd("colorscheme " .. "rose-pine")
 
 require('lualine').setup({
     options = {
-        theme = theme,
+        theme = "rose-pine",
         globalstatus = true,
     },
     sections = {

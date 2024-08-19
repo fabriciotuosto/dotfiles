@@ -1,3 +1,10 @@
+- name: Elixir version
+  set_fact:
+    elixir_version: 1.13.4-otp-24
+    erlang_version: 24.2.2
+    gleam_version: 1.2.1
+
+
 - name: Install erlang dependencies
   become: true
   ansible.builtin.package:
@@ -43,20 +50,15 @@
   when: ansible_os_family == 'Archlinux'
 
 
-
-- name: Elixir version
-  set_fact:
-    elixir_version: 1.13.4-otp-24
-    erlang_version: 24.2.2
-    gleam_version: 1.2.1
-
 # Installing erlang
 - name: Add erlang plugin to asdf
   command: "${HOME}/.asdf/bin/asdf plugin-add erlang"
 
+
 - name: Install erlang {{erlang_version}} with asdf
   command: "${HOME}/.asdf/bin/asdf install erlang {{ erlang_version}}"
   when: ansible_os_family == 'Debian'
+
 
 - name: Install erlang {{erlang_version}} with asdf
 # export KERL_CONFIGURE_OPTIONS="--without-javac --with-odbc=/var/lib/pacman/local/unixodbc-$(pacman -Q unixodbc | cut -d' ' -f2)"
@@ -64,22 +66,28 @@
     ${HOME}/.asdf/bin/asdf install erlang {{ erlang_version}}
   when: ansible_os_family == 'Archlinux'
 
+
 - name: Set global version for golang to {{erlang_version}}
   command: "${HOME}/.asdf/bin/asdf global erlang {{erlang_version}}"
+
 
   # Installing elixir
 - name: Add elixir plugin to asdf
   command: "${HOME}/.asdf/bin/asdf plugin-add elixir"
 
+
 - name: Install elixir {{elixir_version}} with asdf
   command: "${HOME}/.asdf/bin/asdf install elixir {{ elixir_version }}"
+
 
 - name: Set global version for golang to {{elixir_version}}
   command: "${HOME}/.asdf/bin/asdf global elixir {{elixir_version}}"
 
+
 # Installing Gleam
 - name: Add gleam plugin to asdf
   command: "${HOME}/.asdf/bin/asdf plugin-add gleam"
+
 
 - name: Install Gleam {{gleam_version}} with asdf
   command: "${HOME}/.asdf/bin/asdf install gleam {{ gleam_version}}"

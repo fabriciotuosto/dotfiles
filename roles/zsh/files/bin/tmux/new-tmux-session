@@ -3,10 +3,9 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-   basic=$(find ~/.config ~/Tools -mindepth 1 -maxdepth 1 -xtype d)
-   projects=$(find ~/Learning/ ~/Projects -mindepth 2 -maxdepth 2 -xtype d)
-   select=$basic'\n'$projects
-   selected=$(echo -e "$select" | fzf)
+   basic=$(find ~/.local ~/.config ~/Tools -not -path '*/\.*^[config|local]' -mindepth 1 -maxdepth 2 -xtype d)
+   projects=$(find ~/Learning/ ~/Projects -mindepth 1 -not -path '*/\.*' -maxdepth 2 -xtype d)
+   selected=$(echo -e "$basic'\n'$projects" | fzf)
 fi
 if [[ -z $selected ]]; then
     exit 0
