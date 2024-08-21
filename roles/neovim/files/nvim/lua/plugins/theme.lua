@@ -1,10 +1,24 @@
 return {
-    -- {
-    --     "catppuccin/nvim",
-    --     priority = 1000,
-    --     config = function()
-    --     end
-    -- },
+    {
+        "catppuccin/nvim",
+        priority = 1000,
+        config = function()
+        end
+    },
+    {
+        "dgox16/oldworld.nvim",
+        lazy = false,
+        priority = 1000,
+    },
+    {
+        'rose-pine/neovim',
+        name = 'rose-pine',
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require('rose-pine').setup({})
+        end
+    },
     -- {
     --     'AlexvZyl/nordic.nvim',
     --     lazy = false,
@@ -20,21 +34,4 @@ return {
     --         require('gruvbox').setup({})
     --     end,
     -- },
-    {
-        "Mofiqul/dracula.nvim",
-        config = function()
-            require('dracula').setup({
-                transparent_bg = true, -- default false
-            })
-        end
-    },
-    {
-        'rose-pine/neovim',
-        name = 'rose-pine',
-        lazy = false,
-        priority = 1000,
-        config = function()
-            require('rose-pine').setup({})
-        end
-    },
 }

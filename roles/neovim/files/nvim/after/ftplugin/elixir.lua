@@ -1,1 +1,1 @@
-vim.api.nvim_command("colorscheme dracula-soft")
+-- vim.api.nvim_command("colorscheme catppuccin")

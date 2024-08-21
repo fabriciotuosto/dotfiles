@@ -8,5 +8,11 @@
 [rerere]
 	enabled = true
 	autoupdate = true
+[fetch]
+    prune = true
+[status]
+    short = true
 [init]
 	defaultBranch = main
+[color]
+    ui = auto

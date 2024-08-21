@@ -21,5 +21,6 @@
     - nim
     - zig
     - odin
+    - ocaml
     # - mojo
     # - docker

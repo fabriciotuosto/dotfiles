@@ -1,8 +1,8 @@
-vim.cmd("colorscheme " .. "rose-pine")
+vim.cmd("colorscheme " .. "oldworld")
 
 require('lualine').setup({
     options = {
-        theme = "rose-pine",
+        theme = "auto",
         globalstatus = true,
     },
     sections = {
