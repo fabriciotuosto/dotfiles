@@ -1,0 +1,29 @@
+- name: Install Programming Tools
+  become: true
+  ansible.builtin.package:
+    state: present
+    name:
+      - oha
+      - trippy
+      - netscanner
+      - ranger
+      - yazi
+      - mqttui
+      - ncdu
+      - croc
+
+- name: DBLab
+  shell: >
+    curl https://raw.githubusercontent.com/danvergara/dblab/master/scripts/install_update_linux.sh | bash
+  args:
+    executable: /bin/bash
+    chdir: "{{ ansible_env.HOME }}"
+
+- name: Go Programming tools
+  shell: |
+    go install github.com/sachaos/tcpterm@latest
+    go install github.com/ddddddO/packemon/cmd/packemon@latest
+    go install github.com/cointop-sh/cointop@latest
+  args:
+    executable: /bin/bash
+    chdir: "{{ ansible_env.HOME }}"

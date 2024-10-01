@@ -17,10 +17,11 @@
     - golang
     - erlang
     - rust
-    - ruby
-    - nim
-    - zig
-    - odin
     - ocaml
+    # - ruby
+    # - zig
+    # - nim
+    # - odin
     # - mojo
     # - docker
+    - tools

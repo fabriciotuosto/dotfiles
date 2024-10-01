@@ -1,25 +1,6 @@
 require("mason").setup({})
 require("mason-lspconfig").setup({
-    ensure_installed = {
-        "bashls",
-        "cssls",
-        "jsonls",
-        "dockerls",
-        "docker_compose_language_service",
-        "emmet_ls",
-        "html",
-        "lua_ls",
-        "tsserver",
-        "pylsp",
-        "sqlls",
-        "templ",
-        "yamlls",
-        "gopls",
-        "clangd",
-        "zls",
-        "elixirls",
-        "ocamllsp",
-    },
+    ensure_installed = { },
     handlers = require('config.lspservers')
 })
 require("mason-bridge").setup({})

@@ -5,6 +5,10 @@ require("luasnip.loaders.from_vscode").lazy_load()
 lspkind.init({})
 
 cmp.setup({
+    performance = {
+        debounce = 0,
+        throttle = 0,
+    },
     window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered({

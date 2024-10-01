@@ -1,8 +1,8 @@
-vim.cmd("colorscheme " .. "oldworld")
+vim.cmd("colorscheme " .. "tokyonight-night")
 
 require('lualine').setup({
     options = {
-        theme = "auto",
+        theme = "tokyonight",
         globalstatus = true,
     },
     sections = {

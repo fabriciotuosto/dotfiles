@@ -8,7 +8,7 @@ return {
     {
         "NeogitOrg/neogit",
         dependencies = "nvim-lua/plenary.nvim",
-        lazy = false,
+        event = "VeryLazy",
         config = function()
             require("neogit").setup({})
             require('keymaps.vcs')

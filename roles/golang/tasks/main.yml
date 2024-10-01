@@ -1,14 +1,14 @@
 - name: Go version
   set_fact:
-    go_version: 1.22.4
+    go_version: 1.23.0
 
 - name: Add golang plugin to asdf
   command: "${HOME}/.asdf/bin/asdf plugin-add golang"
   register: golang_add
   failed_when: golang_add == 2
 
-- name: Install golang {{go_version}} with asdf
+- name: "Install golang {{go_version}} with asdf"
   command: "${HOME}/.asdf/bin/asdf install golang {{ go_version }}"
 
-- name: Set global version for golang to {{ go_versions }}
+- name: "Set global version for golang to {{ go_versions }}"
   command: "${HOME}/.asdf/bin/asdf global golang {{ go_version }}"
