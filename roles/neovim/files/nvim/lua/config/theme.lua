@@ -1,8 +1,9 @@
-vim.cmd("colorscheme " .. "tokyonight-night")
+require('onedark').setup({ style = "warmer" })
+vim.cmd("colorscheme " .. "onedark")
 
 require('lualine').setup({
     options = {
-        theme = "tokyonight",
+        theme = "onedark",
         globalstatus = true,
     },
     sections = {

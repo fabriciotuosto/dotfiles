@@ -40,6 +40,7 @@
       - "openssh"
       - "mhash"
       - "python-pip"
+      - "python-pipx"
       - "python-numpy"
       - "base-devel"
       - "reflector"

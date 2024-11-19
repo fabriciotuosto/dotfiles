@@ -1,6 +1,6 @@
 require("mason").setup({})
 require("mason-lspconfig").setup({
-    ensure_installed = { },
+    ensure_installed = {},
     handlers = require('config.lspservers')
 })
 require("mason-bridge").setup({})
@@ -8,9 +8,9 @@ require("mason-bridge").setup({})
 require("conform").setup({
     notify_on_error = false,
     format_on_save = {
-        timeout_ms = 500,
+        timeout_ms = 200,
         lsp_fallback = true,
-        -- async = true,
+        async = true,
         -- dry_run = false,
     },
     formatters_by_ft = require("mason-bridge").get_formatters(),

@@ -6,7 +6,6 @@ require('nvim-treesitter.configs').setup({
 
         "lua",
         "go",
-        "rust",
         "python",
         "elixir",
         "heex",
@@ -17,7 +16,6 @@ require('nvim-treesitter.configs').setup({
         "typescript",
         "bash",
         "c",
-        "haskell",
 
         "make",
         "cmake",
@@ -34,7 +32,7 @@ require('nvim-treesitter.configs').setup({
     auto_install = true,
     highlight = {
         enable = true,
-        additional_vim_regex_highlighting = true,
+        additional_vim_regex_highlighting = false,
     },
     textobjects = {
         move = {
