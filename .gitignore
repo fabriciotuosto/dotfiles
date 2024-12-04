@@ -1,1 +1,3 @@
 .vault_pass
+roles/zsh/files/bin/*
+roles/zsh/files/bin/dblab

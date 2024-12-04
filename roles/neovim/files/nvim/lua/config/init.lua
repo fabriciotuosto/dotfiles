@@ -34,7 +34,7 @@ vim.opt.incsearch      = true
 vim.opt.termguicolors  = true
 vim.opt.inccommand     = 'split'
 -- Popups
-vim.opt.completeopt    = "menu,menuone,fuzzy"
+-- vim.opt.completeopt    = "menu,menuone"
 -- Splits
 vim.opt.inccommand     = 'split'
 vim.opt.splitright     = true

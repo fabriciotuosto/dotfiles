@@ -1,5 +1,3 @@
 return {
-    {
-        'navarasu/onedark.nvim',
-    },
+    { "rose-pine/neovim", name = "rose-pine" }
 }

@@ -1,9 +1,9 @@
-require('onedark').setup({ style = "warmer" })
-vim.cmd("colorscheme " .. "onedark")
+require('rose-pine').setup({ variant = "main" })
+vim.cmd("colorscheme " .. "rose-pine")
 
 require('lualine').setup({
     options = {
-        theme = "onedark",
+        theme = "rose-pine",
         globalstatus = true,
     },
     sections = {
