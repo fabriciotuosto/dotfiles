@@ -1,7 +1,7 @@
 - name: Neovim version
   set_fact:
     # neovim_version: "nightly"
-    neovim_version: "v0.10.2"
+    neovim_version: "v0.10.3"
 
 - name: Install neovim binary dependencies
   become: true
