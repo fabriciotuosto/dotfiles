@@ -1,0 +1,11 @@
+# Installing Gleam
+- name: Elixir version
+  set_fact:
+    gleam_version: 1.8.1
+
+- name: Add gleam plugin to asdf
+  command: "${HOME}/.asdf/bin/asdf plugin-add gleam"
+
+
+- name: Install Gleam {{gleam_version}} with asdf
+  command: "${HOME}/.asdf/bin/asdf install gleam {{ gleam_version}}"

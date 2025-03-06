@@ -4,7 +4,6 @@
     - common
     - zsh
     - nvm
-    - asdf
     - tmux
     - neovim
     - aws
@@ -15,13 +14,12 @@
     # Programming SDKs
     - database-clients
     - golang
+    - asdf
     - erlang
     - rust
     - ocaml
-    # - ruby
-    # - zig
-    # - nim
-    # - odin
-    # - mojo
+    - ruby
+    - zig
+    - odin
     # - docker
     - tools

@@ -1,7 +1,7 @@
 - name: Neovim version
   set_fact:
     # neovim_version: "nightly"
-    neovim_version: "v0.10.3"
+    neovim_version: "v0.10.4"
 
 - name: Install neovim binary dependencies
   become: true
@@ -30,7 +30,7 @@
 - name: "Install neovim"
   become: true
   ansible.builtin.unarchive:
-    src: "https://github.com/neovim/neovim/releases/download/{{ neovim_version }}/nvim-linux64.tar.gz"
+    src: "https://github.com/neovim/neovim/releases/download/{{ neovim_version }}/nvim-linux-x86_64.tar.gz"
     creates: /opt/nvim-linux64
     dest: /opt/
     remote_src: yes
@@ -38,7 +38,7 @@
 - name: "Link neovim executable"
   become: true
   ansible.builtin.file:
-    src: "/opt/nvim-linux64/bin/nvim"
+    src: "/opt/nvim-linux-x86_64/bin/nvim"
     dest: "/usr/local/bin/nvim"
     state: link
     force: true

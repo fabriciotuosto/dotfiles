@@ -1,0 +1,15 @@
+- name: Elixir version
+  set_fact:
+    elixir_version: 1.18.3-otp-25
+
+
+- name: Add elixir plugin to asdf
+  command: "asdf plugin add elixir"
+
+
+- name: Install elixir {{elixir_version}} with asdf
+  command: "asdf install elixir {{ elixir_version }}"
+
+
+# - name: Set global version for golang to {{elixir_version}}
+#   command: "asdf global elixir {{elixir_version}}"

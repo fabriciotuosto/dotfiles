@@ -26,10 +26,9 @@ export GOBIN=$GOPATH/bin
 export ODIN_HOME=$HOME/Tools/Odin
 export PATH=$PATH:$GOBIN:$GOPATH:$ODIN_HOME
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/.local/lib/mojo
-export PATH=$PATH:~/.modular/pkg/packages.modular.com_mojo/bin
+export PATH=$PATH:~/.modular/pkg/packages.modular.com_mojo/bin:$HOME/.asdf/shims
 
 source $NVM_DIR/nvm.sh
-source $HOME/.asdf/asdf.sh
 source $HOME/.cargo/env
 
 runNewTmuxSession(){
